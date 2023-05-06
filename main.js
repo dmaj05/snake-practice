@@ -1,6 +1,6 @@
 //VARIABLES
 let inputDir={x:0, y:0};
-let speed=2;
+let speed=10;
 let lastPaintTime=0;
 let snakeArr=[{x:5, y:5}];
 let score=0;
@@ -34,6 +34,26 @@ function Engine(){
         alert("The Game is Over, press Enter to start again");
         snakeArr=[{x:5, y:5}];
         score=0;
+    }
+
+
+    //MOVING THE SNAKE
+    for (let i = snakeArr.length - 2; i>=0 ; i--){
+        
+        snakeArr[i+1]={...snakeArr[i]};
+       
+    }
+    snakeArr[0].x+=inputDir.x;
+    snakeArr[0].y+=inputDir.y;
+
+    //FOOD EATING LOGIC
+    if (snakeArr[0].y === food.y && snakeArr[0].x === food.x) {
+        snakeArr.unshift({x:snakeArr[0].x + inputDir.x, y:snakeArr[0].y + inputDir.y});
+        food = {x:Math.floor((Math.random() * 20) + 1), y:Math.floor((Math.random() * 20) + 1)};
+        
+    } 
+    else {
+        
     }
 
 
