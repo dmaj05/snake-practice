@@ -29,7 +29,7 @@ function isCollide(snake){
             return true;
         }
 
-        if(snake[i].x>20 || snake[i].x<=0 || snake[i].y>20 || snake[i].y<=0){
+        if(snake[i].x>=20 || snake[i].x<=0 || snake[i].y>=20 || snake[i].y<=0){
             return true;
         }
     }
