@@ -27,10 +27,12 @@ function isCollide(snake){
     for(let i=1; i<snakeArr.length; i++){
         if(snake[i].x===snake[0].x && snake[i].y===snake[0].y){
             return true;
+            
         }
 
         if(snake[i].x>=20 || snake[i].x<=0 || snake[i].y>=20 || snake[i].y<=0){
             return true;
+            
         }
     }
 }
@@ -40,9 +42,11 @@ function Engine(){
 
     if(isCollide(snakeArr)){
         inputDir= {x:0, y:0};
+        score=0;
+        scoreCount.innerHTML="Score:0"
         alert("The Game is Over, press Enter to start again");
         snakeArr=[{x:5, y:5}];
-        score=0;
+        
     }
 
 
@@ -89,6 +93,12 @@ function Engine(){
     foodElement.style.gridColumnStart = food.x;
     foodElement.classList.add("food");
     playArea.appendChild(foodElement);
+
+
+    //GAMEOVER WITH TIMER
+    function gameOver(time){
+        isCollide(snakeArr)=true;
+    }
 }
 
 
