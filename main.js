@@ -22,8 +22,17 @@ function main(currentTime){
 }
 
 
-function isCollide(arr){
-    return false;
+function isCollide(snake){
+    //SNAKE HITS ITSELF
+    for(let i=1; i<snakeArr.length; i++){
+        if(snake[i].x===snake[0].x && snake[i].y===snake[0].y){
+            return true;
+        }
+
+        if(snake[i].x>20 || snake[i].x<=0 || snake[i].y>20 || snake[i].y<=0){
+            return true;
+        }
+    }
 }
 
 function Engine(){
@@ -50,6 +59,8 @@ function Engine(){
     if (snakeArr[0].y === food.y && snakeArr[0].x === food.x) {
         snakeArr.unshift({x:snakeArr[0].x + inputDir.x, y:snakeArr[0].y + inputDir.y});
         food = {x:Math.floor((Math.random() * 20) + 1), y:Math.floor((Math.random() * 20) + 1)};
+        score+=1;
+        scoreCount.innerHTML = "Score:" + score;
         
     } 
     else {

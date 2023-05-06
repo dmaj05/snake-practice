@@ -29,3 +29,11 @@
 .food{
     background-color: red;
 }
+
+#scoreCount{
+    position:absolute;
+    top:60px;
+    right: 200px;
+    font-size: 30px;
+    font-weight: bold;
+}
