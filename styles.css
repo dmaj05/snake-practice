@@ -1,3 +1,26 @@
-p{
-    color:red;
+.main{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    
+}
+
+#playarea{
+    background-color: black;
+    height:700px;
+    width: 700px;
+    border: 2px solid blue;
+    display: grid;
+    grid-template-rows: repeat(20,1fr); 
+    grid-template-columns: repeat(20,1fr);
+    
+}
+
+.head{
+    background-color: green;
+}
+
+.food{
+    background-color: purple;
 }
