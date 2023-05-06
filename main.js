@@ -1,10 +1,10 @@
 //VARIABLES
-let direction={x:0, y:0};
+let inputDir={x:0, y:0};
 let speed=2;
 let lastPaintTime=0;
-let snakeArr=[{x:0, y:0}];
-
-food={x:5, y:5};
+let snakeArr=[{x:5, y:5}];
+let score=0;
+food={x:10, y:5};
 
 
 
@@ -21,8 +21,20 @@ function main(currentTime){
     Engine()
 }
 
+
+function isCollide(arr){
+    return false;
+}
+
 function Engine(){
     //UPDATING THE SNAKE ARRAY 
+
+    if(isCollide(snakeArr)){
+        inputDir= {x:0, y:0};
+        alert("The Game is Over, press Enter to start again");
+        snakeArr=[{x:5, y:5}];
+        score=0;
+    }
 
 
     //RENDERING THE SNAKE 
